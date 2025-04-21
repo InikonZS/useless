@@ -3,10 +3,10 @@ import { GoodScroll } from "../goodScroll/GoodScroll";
 import "./mainMenu.css";
 
 interface IMainMenuProps{
-
+    onLevelClick: (levelId: number)=>void
 }
 
-export const MainMenu = ({}: IMainMenuProps)=>{
+export const MainMenu = ({onLevelClick}: IMainMenuProps)=>{
     const levels = new Array(20).fill(null).map((it, i)=>({name: i.toString()}));
     return <div className="MainMenu">
         <div className="MainMenu_header">
@@ -40,8 +40,8 @@ export const MainMenu = ({}: IMainMenuProps)=>{
         <GoodScroll>
         <div className="MainMenu_scroll">
             <div className="MainMenu_levels">
-                {levels.map(it=>{
-                    return <div className="MainMenu_level">{it.name}</div>
+                {levels.map((it, i)=>{
+                    return <div className="MainMenu_level" onClick={()=>{onLevelClick(i)}}>{it.name}</div>
                 })}
             </div> 
         </div>

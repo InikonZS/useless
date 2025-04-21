@@ -1,6 +1,7 @@
 .MainMenu{
     border-image: url('../../assets/border.png');
-    width: 400px;
+    max-width: 400px;
+    width: 100%;
     border-image-width: 60px 140px;
     border-image-slice: 40% 48%;
     padding: 12px 14px;
